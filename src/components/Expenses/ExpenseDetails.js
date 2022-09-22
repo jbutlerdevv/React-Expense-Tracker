@@ -1,9 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
 import "./ExpenseDetails.css";
-import { expensesArr } from "../App";
-import Card from "./Card";
+import { expensesArr } from "../../App";
+import Card from "../UI/Card";
 
-function ExpenseDetails(props) {
+const ExpenseDetails = () => {
     const expensesData = expensesArr.map((expense, i) => (
         <ExpenseItem
             key={i}
@@ -15,6 +15,7 @@ function ExpenseDetails(props) {
 
     return <Card className='expenses'>{expensesData}</Card>;
 
+    // COURSE SOLUTION
     // return (
     //     <Card className='expenses'>
     //         <ExpenseItem
@@ -39,6 +40,7 @@ function ExpenseDetails(props) {
     //         />
     //     </Card>
     // );
-}
+    // END COURSE SOLUTION
+};
 
 export default ExpenseDetails;

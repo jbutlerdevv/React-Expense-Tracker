@@ -1,5 +1,5 @@
 // import ExpenseItem from "./components/ExpenseItem";
-import ExpenseDetails from "./components/ExpenseDetails";
+import ExpenseDetails from "./components/Expenses/ExpenseDetails";
 
 export const expensesArr = [
     {
@@ -28,7 +28,7 @@ export const expensesArr = [
     },
 ];
 
-function App(props) {
+const App = () => {
     // COURSE SOLUTION
     // const expenses = [
     //     {
@@ -64,6 +64,6 @@ function App(props) {
             <ExpenseDetails items={expensesArr} />
         </div>
     );
-}
+};
 
 export default App;
