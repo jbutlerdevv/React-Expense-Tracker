@@ -1,3 +1,5 @@
+import React from "react";
+
 import ExpenseItem from "./ExpenseItem";
 import "./ExpenseDetails.css";
 import { expensesArr } from "../../App";

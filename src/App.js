@@ -1,4 +1,5 @@
-// import ExpenseItem from "./components/ExpenseItem";
+import React from "react";
+
 import ExpenseDetails from "./components/Expenses/ExpenseDetails";
 
 export const expensesArr = [
