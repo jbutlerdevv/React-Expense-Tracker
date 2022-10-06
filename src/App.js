@@ -60,9 +60,14 @@ const App = () => {
     // ];
     // END COURSE SOLUTION
 
+    const addExpenseHandler = (expense) => {
+        console.log("In app.js");
+        console.log(expense);
+    };
+
     return (
         <div>
-            <NewExpense />
+            <NewExpense onAddExpense={addExpenseHandler} />
             <ExpenseDetails items={expensesArr} />
         </div>
     );
