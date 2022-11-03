@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
+// STATELESS/PRESENTATIONAL/DUMB COMPONENT
+// No internal state or state at all, just to output
 const ExpenseItem = (props) => {
     //useState wants a default state value. It creates a special kind of variable, a variable where changes will lead to the component to be called again. In turn we can assign a special value to the variable.
     //The initial value is the first argument inside of useState - Once set the "special" variable is created. It gives us access to the special variable.
@@ -13,21 +15,21 @@ const ExpenseItem = (props) => {
 
     //below is array destructuring
     //In the below, the first element in the array is the pointer to the managed value (the default state value (argument in useState)). The second element in the array is a function ("updating function" above mentioned) which we can call to set a new title
-    const [title, setTitle] = useState(props.title);
+    // const [title, setTitle] = useState(props.title);
 
-    const clickHandler = () => {
-        setTitle("Updated!");
-        console.log(title);
-    };
+    // const clickHandler = () => {
+    //     setTitle("Updated!");
+    //     console.log(title);
+    // };
 
     return (
         <Card className='expense-item'>
             <ExpenseDate date={props.date} />
             <div className='expense-item__description'>
-                <h2>{title}</h2>
+                <h2>{props.title}</h2>
                 <div className='expense-item__price'>${props.amount}</div>
             </div>
-            <button onClick={clickHandler}>Change Title</button>
+            {/* <button onClick={clickHandler}>Change Title</button> */}
         </Card>
     );
 };

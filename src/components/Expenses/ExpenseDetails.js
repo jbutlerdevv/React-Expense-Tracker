@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./ExpensesFilter";
 import "./ExpenseDetails.css";
 import { expensesArr } from "../../App";
 import Card from "../UI/Card";
 
 const ExpenseDetails = () => {
+    const [filteredYear, setFilteredYear] = useState("2020");
+
+    const filterChangeHandler = (selectedYear) => {
+        setFilteredYear(selectedYear);
+    };
+
     const expensesData = expensesArr.map((expense, i) => (
         <ExpenseItem
             key={i}
@@ -15,7 +22,17 @@ const ExpenseDetails = () => {
         />
     ));
 
-    return <Card className='expenses'>{expensesData}</Card>;
+    return (
+        <div>
+            <Card className='expenses'>
+                <ExpensesFilter
+                    selected={filteredYear}
+                    onChangeFilter={filterChangeHandler}
+                />
+                {expensesData}
+            </Card>
+        </div>
+    );
 
     // COURSE SOLUTION
     // return (
